@@ -58,7 +58,7 @@ exports.decorateConfig = config => {
         border-image: linear-gradient(#21252b, #181a1f 1em) 0 0 0 1 stretch;
         border-style: solid;
       }
-      .tab_tab.tab_first {
+      .tab_tab:first-of-type {
         border-width: 0;
       }
       .tab_tab:hover {
@@ -96,7 +96,7 @@ exports.decorateConfig = config => {
         z-index: 1;
         position: absolute;
         top: 0;
-        left: 0;
+        left: -1px;
         bottom: -1px;
         right: 0;
         height: inherit;
@@ -105,6 +105,9 @@ exports.decorateConfig = config => {
         border: 1px solid #181a1f;
         border-bottom-color: ${backgroundColor};
         border-top: 0;
+      }
+      .tab_tab.tab_active:last-of-type::before {
+        border-right-width: 0;
       }
       .tab_tab.tab_active::after {
         opacity: 1;
